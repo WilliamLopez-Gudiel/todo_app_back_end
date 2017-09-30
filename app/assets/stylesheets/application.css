@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+html{
+    font-family: sans-serif;
+}
+
+li{
+    margin-bottom: 10px;
+    padding: 5px;
+}
+li:hover{
+    background-color: lightgreen
+}
+.pomodoro-estimate{
+    color: red;
+    font-weight:bold;
+    font-size: 14px;
+    background-color: tan;
+    padding: 5px 10px 5px 10px;
+    
+}
+
+#add-new-todo-button{
+    font-size: 20px;
+    color: white;
+    outline: none;
+    border-style: none;
+    padding: 10px;
+    box-shadow: 3px 2px 1px #90A4AE;
+    background-color: #03A9F4;
+    display: block;
+    margin-top: 10px;
+    
+}
+#add-new-todo-button:active{
+    box-shadow: 1px 1px 1px #90A4AE;
+}
