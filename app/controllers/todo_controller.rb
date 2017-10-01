@@ -1,24 +1,16 @@
 class TodoController < ApplicationController
     def index
     end
-    
+    def new
+    end
+    def create
+        t = Todo.new
+        t.description = params['description']
+        t.pomodoro_estimate = params['pomodoro_estimate']
+        t.save
+        redirect_to "/todo/show/#{ t.id }"
+    end
     def show
-        todo_id = params[:id]
-        if todo_id=='1'
-               @todo_description ="finish homework"
-               @todo_pomodoro_estimate = 4
-         elsif todo_id=='2'
-               @todo_description ="Eat Snacks"
-               @todo_pomodoro_estimate = 3
-         elsif todo_id=='3'
-               @todo_description ="Get Supplies"
-               @todo_pomodoro_estimate = 2
-        elsif todo_id=='4'
-               @todo_description ="Order food for saturday and sunday"
-               @todo_pomodoro_estimate = 5
-        elsif todo_id=='5'
-               @todo_description ="Check Pre-Work Assighnments"
-               @todo_pomodoro_estimate = 4
-        end
+       @todo = Todo.find_by_id(params[:id])
     end
 end
